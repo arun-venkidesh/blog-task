@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title> Poem Form </title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+</head>
+<body class="body">
+    <div class="content">
+        <h3 class="heading">ENTER DETAILS</h3>
+        <form action="" method="POST" id="form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

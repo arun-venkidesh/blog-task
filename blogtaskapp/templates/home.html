@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body class="body">
+    <div id="headingthree">
+        <h3>Poems</h3>
+        <h3> summary </h3>
+    </div>
+{% for x in detail %}
+    <div class="alllist">
+        <p>Title: {{x.Title}} </p>
+        <p>Description: {{x.Description}} </p>
+        <p>Date: {{x.Date}} </p>
+        <p>Author: {{x.Author}} </p> 
+        <a href="/edit/{{x.id}}" class="anchor"><span>Edit</span></a>
+        <a href="/delete/{{x.id}}" class="anchor">Delete</a>
+    </div>
+{% endfor %}
+</body>
+</html>
